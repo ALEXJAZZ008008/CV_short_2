@@ -1,0 +1,171 @@
+\documentclass{cv}
+
+\usepackage{fontspec}
+\usepackage[british]{babel}
+\usepackage[left=1.0cm,top=1.0cm,right=1.0cm,bottom=2.0cm]{geometry}
+
+\usepackage[activate={true, nocompatibility}, final, tracking=true, kerning=false, spacing=false, factor=1050, stretch=10, shrink=10]{microtype}
+\microtypecontext{spacing=nonfrench}
+
+\tolerance=1414
+\hbadness=1414
+\emergencystretch=1.5em
+\sloppy
+
+\usepackage{setspace}
+
+\usepackage{tabularx}
+
+\usepackage[inline]{enumitem}
+
+\usepackage{needspace}
+\usepackage{fancyhdr}
+\usepackage{hyperref}
+
+\hypersetup{
+    hidelinks,
+    pdftitle={Curriculum Vitae - Alexander C. Whitehead},
+    pdfauthor={Alexander C. Whitehead}
+}
+
+\setlength{\footskip}{1.0cm}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyfoot[C]{\footnotesize Dr. Alexander C. Whitehead \textbar{} Curriculum Vitae \textbar{} \thepage}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+\setmainfont[
+    Path=./,
+    UprightFont = {*-Regular},
+    BoldFont    = {*-Bold},
+    ItalicFont  = {*-Italic},
+    BoldItalicFont = {*-BoldItalic}
+]{DINish.otf}
+
+\makeatletter
+
+\def\@photo{}
+\def\@photowidth{0pt}
+\newcommand{\photo}[2]{\def\@photo{#1}\def\@photowidth{#2}}
+
+\makeatother
+
+\begin{document}
+    \setlength{\parindent}{0pt}
+
+    {\LARGE\textbf{Dr.~Alexander~C.~Whitehead}}\\
+    {\small
+    Fuhlsbüttler Straße 599, 22337 Hamburg, Germany\\
+    \href{tel:+4915563707429}{+49 15563 707429} \textbar{} \href{mailto:alexandercwhitehead@gmail.com}{alexandercwhitehead@gmail.com}\\
+    \href{https://scholar.google.com/citations?user=-hH_J28AAAAJ}{Google Scholar}
+    \textbar{}
+    \href{https://orcid.org/0000-0002-9151-3295}{ORCID}
+    \textbar{}
+    \href{https://github.com/ALEXJAZZ008008}{GitHub}\\
+    \textbf{Authorised to work in Germany; no visa sponsorship required \textbar{} Available immediately}}
+    
+    \begin{spacing}{1.1}
+        \normalsize
+        
+        \vspace{0.35cm}
+        \begin{rSection}{Profile}
+            Scientific software engineer and applied machine learning scientist with a PhD in medical imaging and BSc/MSc degrees in computer science. I design, implement and evaluate scientific software, machine learning models and quantitative imaging algorithms, primarily in Python, drawing on substantial earlier C++ experience. I independently developed ASTRA for non-invasive PET quantification and collaborated with GE HealthCare on PET/CT respiratory motion correction.
+        \end{rSection}
+        
+        \begin{rSection}{Technical Skills}
+            \begin{itemize}
+                \item \textbf{Python (PhD--present):} NumPy, SciPy, pandas, Matplotlib, Jupyter, scikit-learn, TensorFlow/Keras, PyTorch; machine learning, data analysis and scientific computing.
+                \item \textbf{C++ (BSc--mid-PhD):} DirectX, OpenGL, Qt, PCL, CMake; graphics, simulation and scientific software.
+                \item \textbf{Machine Learning \& Statistics:} Deep learning (CNNs, autoencoders, transformers, diffusion models, Bayesian neural networks), model interpretability; PCA, weighted linear regression, survival analysis, uncertainty quantification, cross-validation.
+                \item \textbf{Other Programming Languages:} C (BSc; compilers, embedded systems), C\# (BSc--MSc; Unity, Xamarin), Java (BSc; Android), JavaScript (BSc), MATLAB (PhD), SQL (MSc).
+                \item \textbf{Systems \& Tools:} Linux (primary operating system), Git, Bash, HPC clusters (SLURM).
+                \item \textbf{Medical Imaging \& 3D Sensing:} PET/CT, dynamic PET, image reconstruction and registration, respiratory motion correction, kinetic modelling; LiDAR and Kinect depth sensing, point-cloud registration and processing.
+            \end{itemize}
+        \end{rSection}
+        
+        \begin{rSection}{Experience}
+            \vspace{-0.35cm}
+            
+            \item \begin{rSubsection}{London South Bank University \textnormal{-- London, UK}}{Feb 2025 -- Present}{Visiting Fellow}{}
+                \item \begin{itemize}
+                    \item Independently designed and implemented ASTRA in TensorFlow, integrating a spatiotemporal patched autoencoder, transformer and metabolite-correction module to estimate metabolite-corrected arterial input functions with predictive uncertainty from dynamic [\textsuperscript{11}C]PBR28 PET without arterial blood sampling at inference.
+                    \item Co-first-authored the \href{https://doi.org/10.21203/rs.3.rs-8895728/v1}{2026 ASTRA preprint}, reporting evaluation across four PET datasets and better agreement with blood-derived quantification than a population-corrected image-derived input-function baseline on two datasets.
+                    \item Co-first-authored a \href{https://doi.org/10.1109/EMBC58623.2025.11251612}{2025 IEEE EMBC paper} on multicentre neural-network PET quantification.
+                \end{itemize}
+            \end{rSubsection}
+        
+            \item \begin{rSubsection}{University College London \textnormal{-- London, UK}}{Sep 2018 -- Sep 2025}{Doctoral Researcher}{}        
+                \item \begin{itemize}
+                    \item Designed, implemented and evaluated PET/CT respiratory motion-correction algorithms using image registration and \href{https://doi.org/10.1109/NSS/MIC44845.2022.10399154}{motion models fitted to coarsely gated data and applied to finer gates}, improving image contrast and quantitative accuracy in simulations funded by GE HealthCare.
+                    \item Developed a data-driven method for retrospective respiratory signal extraction from dynamic PET data without external monitoring equipment.
+                    \item Developed reusable Python and MATLAB pipelines for PET simulation, image reconstruction and quantitative evaluation of respiratory motion-correction methods.
+                    \item First-authored a \href{https://doi.org/10.1109/NSSMICRTSD49126.2023.10338687}{2023 IEEE NSS/MIC paper} on Bayesian neural networks for PET input-function estimation with uncertainty quantification.
+                    \item First-authored a \href{https://doi.org/10.1088/1361-6560/ad5ef1}{2024 \textit{Physics in Medicine \& Biology} paper} (Editor's Choice), demonstrating earlier and more accurate respiratory signal extraction using selective PCA than conventional PCA on seven held-out acquisitions from a 22-acquisition study.
+                    \item Contributed code to \href{https://github.com/UCL/STIR}{STIR}, including \href{https://github.com/UCL/STIR/blob/a56de48ecb020547ea40ccb992e956757a8c5006/src/include/stir/numerics/FastErf.inl}{C++ error-function interpolation}, and to \href{https://github.com/SyneRBI/SIRF}{SIRF}, both open-source image-reconstruction frameworks.
+                    \item Collaborated with GE HealthCare engineers and hospital staff to align PET/CT algorithm development with engineering and clinical requirements.
+                    \item Supervised four MSc research projects, serving as primary supervisor for one.
+                \end{itemize}
+            \end{rSubsection}
+        
+            \item \begin{rSubsection}{University College London \textnormal{-- London, UK}}{Dec 2022 -- Dec 2024}{Research Fellow}{}
+                \item \begin{itemize}
+                    \item Developed CT-based models for survival and disease progression in idiopathic pulmonary fibrosis, including Grad-CAM interpretability analysis.
+                    \item Evaluated survival models on 550 CT acquisitions using five-fold cross-validation; likelihood-based models outperformed the Cox-based approaches tested.
+                    \item Built reproducible Python pipelines for survival-model evaluation.
+                    \item First-authored an \href{https://doi.org/10.1109/NSSMICRTSD49126.2023.10337922}{IEEE NSS/MIC paper} on CT-based survival analysis.
+                    \item Co-authored \href{https://doi.org/10.1016/j.media.2023.103016}{\textit{CenTime}} on event-conditional censoring, published in \textit{Medical Image Analysis}.
+                \end{itemize}
+            \end{rSubsection}
+        
+            \item \begin{rSubsection}{University College London \textnormal{-- London, UK}}{Oct 2018 -- Dec 2024}{Senior Postgraduate Teaching Assistant}{}
+                \item \begin{itemize}
+                    \item Lectured on introductory programming to approximately 200 students.
+                    \item Taught electronics, embedded systems programming in C, engineering mathematics using MATLAB, Python programming, medical physics and professional writing.
+                \end{itemize}
+            \end{rSubsection}
+        
+            \item \begin{rSubsection}{University of Hull \textnormal{-- Hull, UK}}{Oct 2017 -- Sep 2018}{Demonstrator}{}
+                \item \begin{itemize}
+                    \item Supported undergraduate teaching in C and C\# programming, electronics, embedded systems and databases.
+                \end{itemize}
+            \end{rSubsection}
+        
+            \item \begin{rSubsection}{University of Hull (Digital Centre) \textnormal{-- Hull, UK}}{Jun 2017 -- Sep 2017}{Research Intern}{}
+                \item \begin{itemize}
+                    \item Designed and built a drone-mounted rotating-LiDAR scanner for 3D room mapping; contributed to an experimental autonomous-vehicle project.
+                \end{itemize}
+            \end{rSubsection}
+        \end{rSection}
+        
+        \begin{rSection}{Education}
+            \vspace{-0.35cm}
+            
+            \item \begin{rSubsection}{University College London \textnormal{-- London, UK}}{2025}{PhD in Medical Imaging Physics and Medical Image Computing}{}
+                \item \textbf{Thesis:} \href{https://discovery.ucl.ac.uk/id/eprint/10212970/}{\textit{Improved Quantification for Respiratory Gated PET/CT: Data-Driven Algorithms for Respiratory Motion Correction in PET/CT}}
+            \end{rSubsection}
+        
+            \item \begin{rSubsection}{University of Hull \textnormal{-- Hull, UK}}{2018}{MSc in Advanced Computer Science}{Distinction}
+                \item \begin{itemize}
+                    \item Developed a C++/Qt framework for Kinect-based point-cloud registration and motion tracking.
+                    \item Implemented a DirectX 11 graphics engine with custom HLSL shaders, lighting, shadows and physics.
+                \end{itemize}
+            \end{rSubsection}
+        
+            \item \begin{rSubsection}{University of Hull \textnormal{-- Hull, UK}}{2017}{BSc in Computer Science}{First Class Honours}
+                \item \begin{itemize}
+                    \item Developed a C\#/Xamarin GPS-based multiplayer game using TCP/UDP networking and geometric algorithms.
+                    \item Implemented a compiler in C for a custom language using Flex/Bison and constant-folding optimisation.
+                \end{itemize}
+            \end{rSubsection}
+        \end{rSection}
+        
+        \begin{rSection}{Languages}
+            \textbf{English:} Native \hspace{1cm}\textbar{}\hspace{1cm} \textbf{German:} A1 (certified; continuing study)
+        \end{rSection}
+        
+        \begin{rSection}{Personal Interests}
+            Gardening is my main hobby; I tend indoor and outdoor plants and plan my tomato-growing season using grow lights. I also design and track strength-training programmes, and enjoy live music and fish-keeping.
+        \end{rSection}
+    \end{spacing}
+\end{document}
